@@ -112,8 +112,7 @@ function showBannerAtGivenXY() {
     AdMob.showBannerAtXY(x, y);
 }
 function prepareInterstitial() {
-        var autoshow = document.getElementById('autoshow').checked;
-        AdMob.prepareInterstitial({adId:admobid.interstitial, autoShow:autoshow});
+        AdMob.prepareInterstitial({adId:admobid.interstitial, autoShow:false});
 }
 function onResize(){
     var s = document.getElementById('sizeinfo');
@@ -126,7 +125,7 @@ function onResize(){
 			<table cellspacing="0" cellpadding="0" class="dummy">
 				<tr>
 					<td class="dummy-head" colspan="3">
-						<a href="javascript:page(2);" ng-click="step_number=1;create_table(element_by_level[level_by_step(step_number)]);"><table cellspacing="0" cellpadding="0" class="head-button{{night_mode}}"><tr><td><i class="fa fa-play"></i> Play</td></tr></table></a>
+						<a href="javascript:page(2);prepareInterstitial();" ng-click="step_number=1;create_table(element_by_level[level_by_step(step_number)]);"><table cellspacing="0" cellpadding="0" class="head-button{{night_mode}}"><tr><td><i class="fa fa-play"></i> Play</td></tr></table></a>
 					</td>
 				</tr>
 				<tr>
