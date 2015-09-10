@@ -155,6 +155,7 @@ app.controller('myCtrl', function($scope, $timeout) {
 		} else {
 			$scope.set_high_step($scope.step_number);
 			page(4);
+			AdMob.showInterstitial();
 		}
 	}
 
