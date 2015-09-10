@@ -192,6 +192,7 @@ function page(page_number) {
 			document.getElementById('page'+i).style.display='none';
 		}
 	}
+	if(page_number==2) prepareInterstitial();
 }
 
 function next_step(number) {
