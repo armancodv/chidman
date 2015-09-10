@@ -1,5 +1,5 @@
-var app = angular.module('myApp', ['ngStorage']);
-app.controller('myCtrl', function($scope, $localStorage, $timeout) {
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $timeout) {
 
 	$scope.colors = [];
 	$scope.colors[1] = "93648d";
@@ -28,15 +28,8 @@ app.controller('myCtrl', function($scope, $localStorage, $timeout) {
 	$scope.bordercolors[11] = "d9b00d";
 
 	$scope.step_number=0;
-	if($localStorage.high_step==null) {
-		$scope.set_high_step($scope.step_number);
-	}
-	$scope.high_step=$localStorage.high_step;
-
-	if($localStorage.night_mode==null) {
-		$localStorage.night_mode='';
-	}
-	$scope.night_mode=$localStorage.night_mode;
+	$scope.high_step=0;
+	$scope.night_mode='';
 
 	$scope.element_by_level=[];
 	$scope.element_by_level[1]=2;
@@ -115,24 +108,20 @@ app.controller('myCtrl', function($scope, $localStorage, $timeout) {
 		return level;
 	}
 	$scope.next_step = function() {
-		if(($localStorage.high_step==null)||($localStorage.high_step<$scope.step_number)) {
-			$scope.set_high_step($scope.step_number);
-		}
 		$scope.step_number++;
 	}
 	
 	$scope.set_high_step = function(step) {
-		$localStorage.high_step=step;
 		$scope.high_step=step;
 	}
 
 	$scope.change_night_mode = function() {
-		if($localStorage.night_mode=='') {
-			$localStorage.night_mode='-night';
+		if($scope.night_mode=='') {
+			$scope.night_mode='-night';
 		} else {
-			$localStorage.night_mode='';			
+			$scope.night_mode='';			
 		}
-		$scope.night_mode=$localStorage.night_mode;
+		$scope.night_mode=$scope.night_mode;
 	}
 
 	$scope.create_table = function(number_of_element) {
