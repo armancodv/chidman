@@ -16,17 +16,11 @@ if( /(android)/i.test(navigator.userAgent) ) {
     };
 }
 
-function initApp() {
-    if (AdMob) {
-        AdMob.createBanner({
-            adId : admobid.banner,
-            position : AdMob.AD_POSITION.BOTTOM_CENTER,
-            autoShow : true
-        });
-    }
-}
+// preppare and load ad resource in background, e.g. at begining of game level
+if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
 
-document.addEventListener('deviceready', initApp, false);
+// show the interstitial later, e.g. at end of game level
+if(AdMob) AdMob.showInterstitial();
 
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope, $timeout) {
