@@ -22,6 +22,5 @@
     <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
     <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
-	<gap:plugin name="org.apache.cordova.splashscreen"/>
 	<gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io"/>
 </widget>
