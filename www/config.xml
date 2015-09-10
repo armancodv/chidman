@@ -9,8 +9,11 @@
     <preference name="orientation"                value="default" />
     <preference name="target-device"              value="universal" />
     <preference name="fullscreen"                 value="true" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen"    value="true" />
     <preference name="android-minSdkVersion"      value="7" />
     <preference name="android-installLocation"    value="auto" />
+    <gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io" />
     <icon src="res/icon/icon.png" />
 	<icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
@@ -20,6 +23,4 @@
     <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
     <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
-	<gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io" />
-	<feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
