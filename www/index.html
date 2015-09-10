@@ -20,6 +20,8 @@
         } else {
             initApp();
         }
+prepareInterstitial();
+AdMob.showInterstitial();
     }
 
     var admobid = {};
@@ -120,8 +122,6 @@
         var s = document.getElementById('sizeinfo');
         s.innerHTML = "web view: " + window.innerWidth + " x " + window.innerHeight;
     }
-prepareInterstitial();
-AdMob.showInterstitial();
 
 </script>
 <div id="page1">
