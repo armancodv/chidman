@@ -21,4 +21,5 @@
     <gap:splash src="res/screen/android/screen-hdpi-portrait.png"  gap:platform="android" gap:density="hdpi" />
     <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:density="xhdpi" />
 	<gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io" />
+	<feature name="http://api.phonegap.com/1.0/network"/>
 </widget>
