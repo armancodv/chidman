@@ -42,6 +42,58 @@
 		</td></tr>
 		<tr><td class="page-table-copy">chidman</td></tr>
 	</table>
+
+	
+	<div id="fullpage">
+		<p>Demo for AdMob Plugin</p>
+		Banner<br /> Standard: <select id="adSize">
+			<option value='SMART_BANNER'>SMART_BANNER</option>
+			<option value='BANNER'>BANNER</option>
+			<option value='MEDIUM_RECTANGLE'>MEDIUM_RECTANGLE</option>
+			<option value='FULL_BANNER'>FULL_BANNER</option>
+			<option value='LEADERBOARD'>LEADERBOARD</option>
+			<option value='SKYSCRAPER'>SKYSCRAPER</option>
+		</select><br /> <input type='checkbox' id='overlap' />overlap<br/>
+         <input type='checkbox' id='offsetTopBar' />offsetTopBar<br/>
+		<button onclick="createSelectedBanner();">create</button>
+		<br /> Custom Size: (<input id='w' type='text' size=3 /> x <input
+			id='h' type='text' size=3>)
+		<button onclick="createBannerOfGivenSize();">create</button>
+		<br />
+
+		<button onclick="AdMob.removeBanner();">remove banner</button>
+
+		<hr />
+		<select id="adPosition">
+			<option value='1'>Top Left</option>
+			<option value='2'>Top Center</option>
+			<option value='3'>Top Right</option>
+			<option value='4'>Left</option>
+			<option value='5'>Center</option>
+			<option value='6'>Right</option>
+			<option value='7'>Bottom Left</option>
+			<option value='8' selected>Bottom Center</option>
+			<option value='9'>Bottom Right</option>
+		</select>
+		<button onclick="showBannerAtSelectedPosition();">show</button>
+		<br /> (<input id='x' type='text' size=3 />,<input id='y'
+			type='text' size=3>)
+		<button onclick="showBannerAtGivenXY();">show At XY</button>
+		<br />
+
+		<button onclick="AdMob.hideBanner();">hide banner</button>
+		<hr />
+
+		<p>Interstitial</p>
+		<input type='checkbox' id='autoshow' checked />auto show when ready<br />
+		<button onclick="prepareInterstitial();">Prepare</button>
+		<button onclick="AdMob.showInterstitial();">Show</button>
+		<div id='sizeinfo'></div>
+	</div>
+	
+
+	
+	
 </div>
 
 <div id="page2">
