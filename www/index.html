@@ -24,18 +24,18 @@ function onLoad() {
 var admobid = {};
 if( /(android)/i.test(navigator.userAgent) ) {
 	admobid = {
-		banner: 'ca-app-pub-6869992474017983/9375997553',
-		interstitial: 'ca-app-pub-6869992474017983/1657046752'
+		banner: 'ca-app-pub-9156926935885120/7253626891',
+		interstitial: 'ca-app-pub-9156926935885120/7253626891'
 	};
 } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
 	admobid = {
-		banner: 'ca-app-pub-6869992474017983/4806197152',
-		interstitial: 'ca-app-pub-6869992474017983/7563979554'
+		banner: 'ca-app-pub-9156926935885120/7253626891',
+		interstitial: 'ca-app-pub-9156926935885120/7253626891'
 	};
 } else {
 	admobid = {
-		banner: 'ca-app-pub-6869992474017983/8878394753',
-		interstitial: 'ca-app-pub-6869992474017983/1355127956'
+		banner: 'ca-app-pub-9156926935885120/7253626891',
+		interstitial: 'ca-app-pub-9156926935885120/7253626891'
 	};
 }
     
@@ -112,21 +112,13 @@ function showBannerAtGivenXY() {
     AdMob.showBannerAtXY(x, y);
 }
 function prepareInterstitial() {
-    var autoshow = document.getElementById('autoshow').checked;
-    AdMob.prepareInterstitial({adId:admobid.interstitial, autoShow:autoshow});
+    AdMob.prepareInterstitial({adId:admobid.interstitial, false});
 }
 function onResize(){
     var s = document.getElementById('sizeinfo');
     s.innerHTML = "web view: " + window.innerWidth + " x " + window.innerHeight;
 }
 </script>
-	<div id="fullpage">
-		<p>Interstitial</p>
-		<input type='checkbox' id='autoshow' checked />auto show when ready<br />
-		<button onclick="prepareInterstitial();">Prepare</button>
-		<button onclick="AdMob.showInterstitial();">Show</button>
-		<div id='sizeinfo'></div>
-	</div>
 <div id="page1">
 	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
 		<tr><td class="page-table-home">
