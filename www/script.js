@@ -1,13 +1,3 @@
-var admobid = {};
-if( /(android)/i.test(navigator.userAgent) ) { 
-    admobid = { // for Android
-        banner: 'ca-app-pub-9156926935885120/7253626891',
-        interstitial: 'ca-app-pub-9156926935885120/7253626891'
-    };
-}
-if(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );
-if(AdMob) AdMob.showInterstitial();
-
 var app = angular.module('myApp', ['ngStorage']);
 app.controller('myCtrl', function($scope, $localStorage, $timeout) {
 
