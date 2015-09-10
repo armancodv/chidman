@@ -11,39 +11,8 @@
 </head>
 <body ng-app="myApp" ng-controller="myCtrl" class="body{{night_mode}}" onload="onLoad()" onresize="onResize()">
 
-<div id="page1">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
-		<tr><td class="page-table-home">
-			<table cellspacing="0" cellpadding="0" class="dummy">
-				<tr>
-					<td class="dummy-head" colspan="3">
-						<a href="javascript:page(2);" ng-click="step_number=1;create_table(element_by_level[level_by_step(step_number)]);"><table cellspacing="0" cellpadding="0" class="head-button{{night_mode}}"><tr><td><i class="fa fa-play"></i> Play</td></tr></table></a>
-					</td>
-				</tr>
-				<tr>
-					<td class="dummy-hand">
-						<a href="javascript:page(6);"><table cellspacing="0" cellpadding="0" class="dummy-button-120{{night_mode}}"><tr><td><i class="fa fa-trophy"></i></td></tr></table></a>
-					</td>
-					<td class="dummy-body">
-						<a href="javascript:page(5);"><table cellspacing="0" cellpadding="0" class="dummy-button-120{{night_mode}}"><tr><td><i class="fa fa-lightbulb-o"></i> Guide</td></tr></table></a>
-					</td>
-					<td class="dummy-hand">
-						<a href="javascript:page(7);"><table cellspacing="0" cellpadding="0" class="dummy-button-120{{night_mode}}"><tr><td><i class="fa fa-cog"></i></td></tr></table></a>
-					</td>
-				</tr>
-			</table>
-			<table cellspacing="0" cellpadding="0" class="progress_bar">
-				<tr>
-					<td class="progress_bar_left{{night_mode}}" style="width:{{high_step*189/150+1}}px"></td>
-					<td class="progress_bar_right{{night_mode}}"></td>
-				</tr>
-			</table>
-			<span>Your Level: {{level_by_step(high_step)}}/21</span>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
 
-	
+
 <script>
     function onLoad() {
         if(( /(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent) )) {
@@ -198,9 +167,40 @@
 		<button onclick="AdMob.showInterstitial();">Show</button>
 		<div id='sizeinfo'></div>
 	</div>
-	
 
-	
+
+
+<div id="page1">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+		<tr><td class="page-table-home">
+			<table cellspacing="0" cellpadding="0" class="dummy">
+				<tr>
+					<td class="dummy-head" colspan="3">
+						<a href="javascript:page(2);" ng-click="step_number=1;create_table(element_by_level[level_by_step(step_number)]);"><table cellspacing="0" cellpadding="0" class="head-button{{night_mode}}"><tr><td><i class="fa fa-play"></i> Play</td></tr></table></a>
+					</td>
+				</tr>
+				<tr>
+					<td class="dummy-hand">
+						<a href="javascript:page(6);"><table cellspacing="0" cellpadding="0" class="dummy-button-120{{night_mode}}"><tr><td><i class="fa fa-trophy"></i></td></tr></table></a>
+					</td>
+					<td class="dummy-body">
+						<a href="javascript:page(5);"><table cellspacing="0" cellpadding="0" class="dummy-button-120{{night_mode}}"><tr><td><i class="fa fa-lightbulb-o"></i> Guide</td></tr></table></a>
+					</td>
+					<td class="dummy-hand">
+						<a href="javascript:page(7);"><table cellspacing="0" cellpadding="0" class="dummy-button-120{{night_mode}}"><tr><td><i class="fa fa-cog"></i></td></tr></table></a>
+					</td>
+				</tr>
+			</table>
+			<table cellspacing="0" cellpadding="0" class="progress_bar">
+				<tr>
+					<td class="progress_bar_left{{night_mode}}" style="width:{{high_step*189/150+1}}px"></td>
+					<td class="progress_bar_right{{night_mode}}"></td>
+				</tr>
+			</table>
+			<span>Your Level: {{level_by_step(high_step)}}/21</span>
+		</td></tr>
+		<tr><td class="page-table-copy">chidman</td></tr>
+	</table>
 	
 </div>
 
