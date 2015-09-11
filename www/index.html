@@ -40,7 +40,7 @@ if( /(android)/i.test(navigator.userAgent) ) {
 }
     
 function initApp() {
-if (! AdMob ) { alert( 'admob plugin not ready' ); return; }
+if (! AdMob ) { return; }
 initAd();
     // display a banner at startup
     createSelectedBanner();
@@ -67,11 +67,6 @@ function initAd(){
 function registerAdEvents() {
     // new events, with variable to differentiate: adNetwork, adType, adEvent
     document.addEventListener('onAdFailLoad', function(data){ 
-    	alert('error: ' + data.error + 
-    			', reason: ' + data.reason + 
-    			', adNetwork:' + data.adNetwork + 
-    			', adType:' + data.adType + 
-    			', adEvent:' + data.adEvent); // adType: 'banner' or 'interstitial'
     });
     document.addEventListener('onAdLoaded', function(data){});
     document.addEventListener('onAdPresent', function(data){});

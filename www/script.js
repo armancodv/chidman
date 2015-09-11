@@ -119,7 +119,7 @@ app.controller('myCtrl', function($scope, $timeout) {
 	}
 	
 	$scope.set_high_step = function(step) {
-		if((localStorage.getItem('high_step')==null)||(localStorage.getItem('high_step')<step)) {
+		if(localStorage.getItem('high_step')<step) {
 			localStorage.setItem('high_step', step);
 		}
 		$scope.high_step=step;
