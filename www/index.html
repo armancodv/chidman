@@ -111,7 +111,7 @@ function prepareInterstitial() {
 }
 </script>
 <div id="page1">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}" style="min-height:{{windowHeight}}px">
 		<tr><td class="page-table-home">
 			<table cellspacing="0" cellpadding="0" class="dummy">
 				<tr>
@@ -141,11 +141,9 @@ function prepareInterstitial() {
 		</td></tr>
 		<tr><td class="page-table-copy">chidman</td></tr>
 	</table>
-	
 </div>
-
 <div id="page2">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}" style="min-height:{{windowHeight}}px">
 		<tr><td class="page-table-bar{{night_mode}}">Chidman</td></tr>
 		<tr><td class="page-table-body">
 			<table cellspacing="0" cellpadding="0" class="main-element" ng-repeat="n in range(1,number_of_element)" style="background-color:#{{colors[boxtable[n]]}};border:1px solid #{{bordercolors[boxtable[n]]}}"><tr><td class="main-element-td">{{n}}</td></tr></table>
@@ -160,7 +158,7 @@ function prepareInterstitial() {
 </div>
 
 <div id="page3">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}" style="min-height:{{windowHeight}}px">
 		<tr><td class="page-table-bar{{night_mode}}">Chidman</td></tr>
 		<tr><td class="page-table-body">
 			<table cellspacing="0" cellpadding="0" class="main-element" ng-repeat="n in range(1,number_of_element)" ng-click="select(n)" style="background-color:#{{colors[boxtable[boxtable_exam[n]]]}};border:1px solid #{{bordercolors[boxtable[boxtable_exam[n]]]}}"><tr><td class="main-element-td">{{result[n]}}</td></tr></table>
@@ -176,7 +174,7 @@ function prepareInterstitial() {
 </div>
 
 <div id="page4">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}" style="min-height:{{windowHeight}}px">
 		<tr><td class="page-table-bar{{night_mode}}">Chidman</td></tr>
 		<tr><td class="page-table-body">
 			Game Over
@@ -189,7 +187,7 @@ function prepareInterstitial() {
 </div>
 
 <div id="page5">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}" style="min-height:{{windowHeight}}px">
 		<tr><td class="page-table-bar{{night_mode}}">Guide</td></tr>
 		<tr><td class="page-table-body">
 			<p>1. Click on play.</p>
@@ -210,7 +208,7 @@ function prepareInterstitial() {
 </div>
 
 <div id="page6">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}" style="min-height:{{windowHeight}}px">
 		<tr><td class="page-table-bar{{night_mode}}">High Score</td></tr>
 		<tr><td class="page-table-body">
 			<table cellspacing="0" cellpadding="0" class="progress_bar">
@@ -230,7 +228,7 @@ function prepareInterstitial() {
 </div>
 
 <div id="page7">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}" style="min-height:{{windowHeight}}px">
 		<tr><td class="page-table-bar{{night_mode}}">Settings</td></tr>
 		<tr><td class="page-table-body">
 			<table cellspacing="0" cellpadding="0" class="settings-table" ng-click="change_night_mode()"><tr>
@@ -245,7 +243,7 @@ function prepareInterstitial() {
 </div>
 
 <div id="page8">
-	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
+	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}" style="min-height:{{windowHeight}}px">
 		<tr><td class="page-table-bar{{night_mode}}">Chidman</td></tr>
 		<tr><td class="page-table-body">
 			You won!

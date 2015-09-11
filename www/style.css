@@ -18,6 +18,8 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
 }
 
 .body-night {
@@ -95,7 +97,7 @@ a {
 }
 
 .page-table-home {
-	padding:10px 10px 10px 10px;
+	padding:30px 10px 20px 10px;
 	text-align:center;
 }
 

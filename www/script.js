@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $timeout) {
+app.controller('myCtrl', function($scope, $window, $timeout) {
 
 	$scope.colors = [];
 	$scope.colors[1] = "93648d";
@@ -37,6 +37,8 @@ app.controller('myCtrl', function($scope, $timeout) {
 		localStorage.setItem('night_mode', '');
 	}
 	$scope.night_mode=localStorage.getItem('night_mode');
+
+	$scope.windowHeight=$(window).height();
 
 	$scope.element_by_level=[];
 	$scope.element_by_level[1]=2;
@@ -192,7 +194,21 @@ app.controller('myCtrl', function($scope, $timeout) {
 	$scope.backtohome = function() {
 		$timeout.cancel(yourTimer);
 	}
+	
 
+	var w = angular.element($window);
+	$scope.$watch(
+		function () {return $window.innerHeight;},
+		function (value) {$scope.windowHeight = value;},
+		true
+	);
+
+	w.bind('resize', function(){
+		$scope.$apply();
+	});
+
+
+	
 });
 
 function page(page_number) {
