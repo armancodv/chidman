@@ -29,7 +29,14 @@ app.controller('myCtrl', function($scope, $timeout) {
 
 	$scope.step_number=0;
 	$scope.high_step=0;
-	$scope.night_mode='';
+	if(localStorage.getItem('high_step')==null) {
+		localStorage.setItem('high_step', 0);
+	}
+	$scope.high_step=localStorage.getItem('high_step');
+	if(localStorage.getItem('night_mode')==null) {
+		localStorage.setItem('night_mode', '');
+	}
+	$scope.night_mode=localStorage.getItem('night_mode');
 
 	$scope.element_by_level=[];
 	$scope.element_by_level[1]=2;
@@ -112,16 +119,20 @@ app.controller('myCtrl', function($scope, $timeout) {
 	}
 	
 	$scope.set_high_step = function(step) {
+		if((localStorage.getItem('high_step')==null)||(localStorage.getItem('high_step')<step)) {
+			localStorage.setItem('high_step', step);
+		}
 		$scope.high_step=step;
 	}
 
 	$scope.change_night_mode = function() {
-		if($scope.night_mode=='') {
-			$scope.night_mode='-night';
+	$scope.night_mode=localStorage.getItem('night_mode');
+		if(localStorage.getItem('night_mode')=='') {
+			localStorage.setItem('night_mode', '-night');
 		} else {
-			$scope.night_mode='';			
+			localStorage.setItem('night_mode', '');
 		}
-		$scope.night_mode=$scope.night_mode;
+		$scope.night_mode=localStorage.getItem('night_mode');
 	}
 
 	$scope.create_table = function(number_of_element) {
@@ -201,4 +212,3 @@ function next_step(number) {
 		document.getElementById('next-step').style.display='none';
 	}
 }
-
