@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $window, $timeout) {
+app.controller('myCtrl', function($scope, $timeout) {
 
 	$scope.colors = [];
 	$scope.colors[1] = "93648d";
@@ -37,8 +37,6 @@ app.controller('myCtrl', function($scope, $window, $timeout) {
 		localStorage.setItem('night_mode', '');
 	}
 	$scope.night_mode=localStorage.getItem('night_mode');
-
-	$scope.windowHeight=$(window).height();
 
 	$scope.element_by_level=[];
 	$scope.element_by_level[1]=2;
@@ -168,7 +166,7 @@ app.controller('myCtrl', function($scope, $window, $timeout) {
 		} else {
 			$scope.set_high_step($scope.step_number);
 			page(4);
-			AdMob.showInterstitial();
+			yourTimer = $timeout(function() {AdMob.showInterstitial();}, 500);
 		}
 	}
 
@@ -196,19 +194,6 @@ app.controller('myCtrl', function($scope, $window, $timeout) {
 	}
 	
 
-	var w = angular.element($window);
-	$scope.$watch(
-		function () {return $window.innerHeight;},
-		function (value) {$scope.windowHeight = value;},
-		true
-	);
-
-	w.bind('resize', function(){
-		$scope.$apply();
-	});
-
-
-	
 });
 
 function page(page_number) {
@@ -223,7 +208,7 @@ function page(page_number) {
 
 function next_step(number) {
 	if(number===1) {
-		document.getElementById('next-step').style.display='block';
+		document.getElementById('next-step').style.display='table';
 	} else {
 		document.getElementById('next-step').style.display='none';
 	}

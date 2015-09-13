@@ -97,7 +97,7 @@ a {
 }
 
 .page-table-home {
-	padding:30px 10px 20px 10px;
+	padding:50px 10px 50px 10px;
 	text-align:center;
 }
 
@@ -303,7 +303,6 @@ a {
 	height:16px;
 	border:1px solid #666666;
 	border-radius:8px;
-	cursor:pointer;
 }
 
 .select-table-night {
@@ -312,6 +311,5 @@ a {
 	background-color:#a8372c;
 	border:1px solid #993228;
 	border-radius:8px;
-	cursor:pointer;
 }
 
