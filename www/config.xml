@@ -11,7 +11,7 @@
     <preference name="fullscreen"                 value="true" />
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen"    value="true" />
-    <preference name="android-minSdkVersion"      value="7" />
+    <preference name="android-minSdkVersion"      value="9" />
     <preference name="android-installLocation"    value="auto" />
     <gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io" />
     <icon src="res/icon/icon.png" />
