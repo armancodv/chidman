@@ -27,12 +27,17 @@ app.controller('myCtrl', function($scope, $timeout) {
 	$scope.bordercolors[10] = "3089c6";
 	$scope.bordercolors[11] = "d9b00d";
 
+	$scope.whiz='';
 	$scope.step_number=0;
 	$scope.high_step=0;
 	if(localStorage.getItem('high_step')==null) {
 		localStorage.setItem('high_step', 0);
 	}
 	$scope.high_step=localStorage.getItem('high_step');
+	if($scope.high_step>=150) {
+		$scope.whiz='Congratulations, you whizzed it!';
+	}
+
 	if(localStorage.getItem('night_mode')==null) {
 		localStorage.setItem('night_mode', '');
 	}
@@ -123,11 +128,19 @@ app.controller('myCtrl', function($scope, $timeout) {
 			localStorage.setItem('high_step', step);
 			$scope.high_step=step;
 		}
+		if(step>=150) {
+			$scope.whiz='Congratulations, you whizzed it!';
+		}
 	}
 
 	$scope.reset_high_step = function() {
 		localStorage.setItem('high_step', 0);
 		$scope.high_step=0;
+		$scope.whiz='';
+	}
+
+	$scope.change_whiz = function() {
+		$scope.whiz='Congratulations, you whizzed it!';
 	}
 
 	$scope.change_night_mode = function() {
@@ -196,6 +209,7 @@ app.controller('myCtrl', function($scope, $timeout) {
 
 	$scope.backtohome = function() {
 		$timeout.cancel(yourTimer);
+		$scope.set_high_step($scope.step_number-1);
 	}
 	
 
