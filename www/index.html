@@ -137,7 +137,8 @@ function prepareInterstitial() {
 					<td class="progress_bar_right{{night_mode}}"></td>
 				</tr>
 			</table>
-			<span>Your Level: {{level_by_step(high_step)}}/21</span>
+			<span>Your Level: {{level_by_step(high_step)}}/21</span><br>
+			<span>{{whiz}}</span>
 		</td></tr>
 		<tr><td class="page-table-copy">chidman</td></tr>
 	</table>
@@ -195,11 +196,11 @@ function prepareInterstitial() {
 			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[6]}};border:1px solid #{{bordercolors[6]}}"><tr><td class="main-element-td">1</td></tr></table>
 			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[8]}};border:1px solid #{{bordercolors[8]}}"><tr><td class="main-element-td">2</td></tr></table>
 			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[11]}};border:1px solid #{{bordercolors[11]}}"><tr><td class="main-element-td">3</td></tr></table>
-			<p>3. Click on colors by your memorized sequence.<span class="text-grey"><br>(for example: first click on gray, second on red, third on yellow)</span></p>
+			<p>3. Click on colors in previously shown sequence.<span class="text-grey"><br>(for example: first click on gray, second on red, third on yellow)</span></p>
 			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[11]}};border:1px solid #{{bordercolors[11]}}"><tr><td class="main-element-td"></td></tr></table>
 			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[6]}};border:1px solid #{{bordercolors[6]}}"><tr><td class="main-element-td"></td></tr></table>
 			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[8]}};border:1px solid #{{bordercolors[8]}}"><tr><td class="main-element-td"></td></tr></table>
-			<p>4. Follow the steps and try to reach level 21.<span class="text-grey"><br>("Next step" button will appear only when you have cliked on the colors in proper order.)</span></p>
+			<p>4. Follow the steps and try to reach level 21.<span class="text-grey"><br>("Next step" button will appear only when you have clicked on the colors in proper order.)</span></p>
 			<hr class="line{{night_mode}}">
 			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button{{night_mode}}"><tr><td><i class="fa fa-home"></i> Back to Home</td></tr></table>
 		</td></tr>
@@ -219,7 +220,7 @@ function prepareInterstitial() {
 			</table>
 			<span>Your Level: {{level_by_step(high_step)}}/21</span><br>
 			<span>High Step: {{high_step}}</span>
-			<table cellspacing="0" cellpadding="0" ng-click="set_high_step(0)" class="button-2{{night_mode}}"><tr><td><i class="fa fa-trash"></i> Reset</td></tr></table>
+			<table cellspacing="0" cellpadding="0" ng-click="reset_high_step()" class="button-2{{night_mode}}"><tr><td><i class="fa fa-trash"></i> Reset</td></tr></table>
 			<hr class="line{{night_mode}}">
 			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button{{night_mode}}"><tr><td><i class="fa fa-home"></i> Back to Home</td></tr></table>
 		</td></tr>
@@ -246,7 +247,7 @@ function prepareInterstitial() {
 	<table cellspacing="0" cellpadding="0" class="page-table{{night_mode}}">
 		<tr><td class="page-table-bar{{night_mode}}">Chidman</td></tr>
 		<tr><td class="page-table-body">
-			You won!
+			Congratulations, you whizzed it!
 			<hr class="line{{night_mode}}">
 			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button{{night_mode}}"><tr><td><i class="fa fa-home"></i> Back to Home</td></tr></table>
 		</td></tr>

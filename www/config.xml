@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.armanco.chidman" version="1.0.1" >
 	<name>Chidman</name>
-	<description></description>
+	<description>It's time to challenge your memory! Join the Chidman players now, and play this wonderful, addictive game totally free! Train your brain by memorizing the order of colors as shown. When safe to say "learned!", it's time to see whether it is! You have few seconds to tap on colors in the right order to activate the next level. Steps are followed till level 21. This all you need to know in HOW TO PLAY! Reach level 21 and you are obviously called a "WHIZ!!"</description>
 	<author href="http://arman.co.com">armanco</author>
 	<content src="index.html"/>
     <preference name="permissions"    		      value="none" />

@@ -125,6 +125,11 @@ app.controller('myCtrl', function($scope, $timeout) {
 		}
 	}
 
+	$scope.reset_high_step = function() {
+		localStorage.setItem('high_step', 0);
+		$scope.high_step=0;
+	}
+
 	$scope.change_night_mode = function() {
 	$scope.night_mode=localStorage.getItem('night_mode');
 		if(localStorage.getItem('night_mode')=='') {
