@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.armanco.chidman" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Chidman</name>
+    <description>
+        It's time to challenge your memory! Join the Chidman players now, and play this wonderful, addictive game totally free! Train your brain by memorizing the order of colors as shown. When safe to say "learned!", it's time to see whether it is! You have few seconds to tap on colors in the right order to activate the next level. Steps are followed till level 21. This all you need to know in HOW TO PLAY! Reach level 21 and you are obviously called a "WHIZ!!"
+    </description>
+    <author email="arman.co.com@gmail.com" href="http://arman.co.com">
+        armanco
+    </author>
+    <content src="index.html" />
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+</widget>
