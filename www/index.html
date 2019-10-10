@@ -1,160 +1,280 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-<meta name="format-detection" content="telephone=no">
-<meta name="msapplication-tap-highlight" content="no">
-<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-<link href="css/style.css" rel="stylesheet" type="text/css"/>
-<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Security-Policy"
+		content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body ng-app="myApp" ng-controller="myCtrl" class="body">
-<div id="page1">
-	<table cellspacing="0" cellpadding="0" class="page-table">
-		<tr><td class="page-table-home">
-			<table cellspacing="0" cellpadding="0" class="dummy">
-				<tr>
-					<td class="dummy-head" colspan="3">
-						<table cellspacing="0" cellpadding="0" onclick="javascript:page(2);prepareInterstitial();" ng-click="step_number=1;create_table(element_by_level[level_by_step(step_number)]);" class="head-button"><tr><td><i class="fa fa-play"></i> Play</td></tr></table>
-					</td>
-				</tr>
-				<tr>
-					<td class="dummy-hand">
-						<table cellspacing="0" cellpadding="0" onclick="javascript:page(6);" class="dummy-button-120"><tr><td><i class="fa fa-trophy"></i></td></tr></table>
-					</td>
-					<td class="dummy-body">
-						<table cellspacing="0" cellpadding="0" onclick="javascript:page(5);" class="dummy-button-120"><tr><td><i class="fa fa-lightbulb-o"></i> Guide</td></tr></table>
-					</td>
-					<td class="dummy-hand">
-						<table cellspacing="0" cellpadding="0" onclick="javascript:page(7);" class="dummy-button-120"><tr><td><i class="fa fa-cog"></i></td></tr></table>
-					</td>
-				</tr>
-			</table>
-			<table cellspacing="0" cellpadding="0" class="progress_bar">
-				<tr>
-					<td class="progress_bar_left" style="width:{{high_step*189/150+1}}px"></td>
-					<td class="progress_bar_right"></td>
-				</tr>
-			</table>
-			<span>Your Level: {{level_by_step(high_step)}}/21</span><br>
-			<span>{{whiz}}</span>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
-</div>
-<div id="page2">
-	<table cellspacing="0" cellpadding="0" class="page-table">
-		<tr><td class="page-table-bar">Chidman</td></tr>
-		<tr><td class="page-table-body">
-			<table cellspacing="0" cellpadding="0" class="main-element" ng-repeat="n in range(1,number_of_element)" style="background-color:#{{colors[boxtable[n]]}};border:1px solid #{{bordercolors[boxtable[n]]}}"><tr><td class="main-element-td">{{n}}</td></tr></table>
-			<hr class="line">
-			Step: {{step_number}}
-			<br>Level: {{level_by_step(step_number)}}
-			<hr class="line">
-			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" ng-click="backtohome()" class="button-2"><tr><td><i class="fa fa-arrow-left"></i> Exit</td></tr></table>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
-</div>
 
-<div id="page3">
-	<table cellspacing="0" cellpadding="0" class="page-table">
-		<tr><td class="page-table-bar">Chidman</td></tr>
-		<tr><td class="page-table-body">
-			<table cellspacing="0" cellpadding="0" class="main-element" ng-repeat="n in range(1,number_of_element)" ng-click="select(n)" style="background-color:#{{colors[boxtable[boxtable_exam[n]]]}};border:1px solid #{{bordercolors[boxtable[boxtable_exam[n]]]}}"><tr><td class="main-element-td">{{result[n]}}</td></tr></table>
-			<hr class="line">
-			Step: {{step_number}}
-			<br>Level: {{level_by_step(step_number)}}
-			<hr class="line">
-			<table cellspacing="0" cellpadding="0" id="next-step" onclick="javascript:page(2);" ng-click="next_step();create_table(element_by_level[level_by_step(step_number)]);" class="button"><tr><td><i class="fa fa-arrow-right"></i> Next Step</td></tr></table>
-			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" ng-click="backtohome()" class="button-2"><tr><td><i class="fa fa-arrow-left"></i> Exit</td></tr></table>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
-</div>
+<body>
+	<div id="page1">
+		<table cellspacing="0" cellpadding="0" class="page-table">
+			<tr>
+				<td class="page-table-home">
+					<table cellspacing="0" cellpadding="0" class="dummy">
+						<tr>
+							<td id="dummy-head" colspan="3">
+								<table cellspacing="0" cellpadding="0"
+									onclick="javascript:page(2);prepareInterstitial();"
+									ng-click="step_number=1;create_table(element_by_level[level_by_step(step_number)]);"
+									class="head-button">
+									<tr>
+										<td><i class="fa fa-play"></i> Play</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td id="dummy-hand-left">
+								<table cellspacing="0" cellpadding="0" onclick="javascript:page(6);"
+									class="dummy-button-120">
+									<tr>
+										<td><i class="fa fa-trophy"></i></td>
+									</tr>
+								</table>
+							</td>
+							<td id="dummy-body">
+								<table cellspacing="0" cellpadding="0" onclick="javascript:page(5);"
+									class="dummy-button-120">
+									<tr>
+										<td><i class="fa fa-lightbulb-o"></i> Guide</td>
+									</tr>
+								</table>
+							</td>
+							<td id="dummy-hand-right">
+								<table cellspacing="0" cellpadding="0" onclick="javascript:page(7);"
+									class="dummy-button-120">
+									<tr>
+										<td><i class="fa fa-cog"></i></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<table cellspacing="0" cellpadding="0" class="progress_bar">
+						<tr>
+							<td class="progress_bar_left"></td>
+							<td class="progress_bar_right"></td>
+						</tr>
+					</table>
+					<span>Your Level: <span class="record-level"></span>/21</span><br>
+					<span class="whiz"></span>
+				</td>
+			</tr>
+			<tr>
+				<td class="page-table-copy">chidman</td>
+			</tr>
+		</table>
+	</div>
+	<div id="page2">
+		<table cellspacing="0" cellpadding="0" class="page-table">
+			<tr>
+				<td class="page-table-bar">Chidman</td>
+			</tr>
+			<tr>
+				<td class="page-table-body">
+					<div id="page2-elements"></div>
+					<hr class="line">
+					Step: <span class="step"></span>
+					<br>Level: <span class="level"></span>
+					<hr class="line">
+					<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" ng-click="backtohome()"
+						class="button-2">
+						<tr>
+							<td><i class="fa fa-arrow-left"></i> Exit</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="page-table-copy">chidman</td>
+			</tr>
+		</table>
+	</div>
 
-<div id="page4">
-	<table cellspacing="0" cellpadding="0" class="page-table">
-		<tr><td class="page-table-bar">Chidman</td></tr>
-		<tr><td class="page-table-body">
-			Game Over
-			<br>Step: {{step_number}}
-			<br>Level: {{level_by_step(step_number)}}
-			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" ng-click="backtohome()" class="button"><tr><td><i class="fa fa-home"></i> Back to Home</td></tr></table>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
-</div>
+	<div id="page3">
+		<table cellspacing="0" cellpadding="0" class="page-table">
+			<tr>
+				<td class="page-table-bar">Chidman</td>
+			</tr>
+			<tr>
+				<td class="page-table-body">
+						<div id="page3-elements"></div>
+						<hr class="line">
+					Step: <span class="step"></span>
+					<br>Level: <span class="level"></span>
+					<hr class="line">
+					<table cellspacing="0" cellpadding="0" id="next-step" onclick="javascript:page(2);"
+						ng-click="next_step();create_table(element_by_level[level_by_step(step_number)]);"
+						class="button">
+						<tr>
+							<td><i class="fa fa-arrow-right"></i> Next Step</td>
+						</tr>
+					</table>
+					<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" ng-click="backtohome()"
+						class="button-2">
+						<tr>
+							<td><i class="fa fa-arrow-left"></i> Exit</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="page-table-copy">chidman</td>
+			</tr>
+		</table>
+	</div>
 
-<div id="page5">
-	<table cellspacing="0" cellpadding="0" class="page-table">
-		<tr><td class="page-table-bar">Guide</td></tr>
-		<tr><td class="page-table-body">
-			<p>1. Click on play.</p>
-			<p>2. Memorize sequence of colors.<span class="text-grey"><br>(for example: 1.gray, 2.red, 3.yellow)</span></p>
-			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[6]}};border:1px solid #{{bordercolors[6]}}"><tr><td class="main-element-td">1</td></tr></table>
-			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[8]}};border:1px solid #{{bordercolors[8]}}"><tr><td class="main-element-td">2</td></tr></table>
-			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[11]}};border:1px solid #{{bordercolors[11]}}"><tr><td class="main-element-td">3</td></tr></table>
-			<p>3. Click on colors in previously shown sequence.<span class="text-grey"><br>(for example: first click on gray, second on red, third on yellow)</span></p>
-			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[11]}};border:1px solid #{{bordercolors[11]}}"><tr><td class="main-element-td"></td></tr></table>
-			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[6]}};border:1px solid #{{bordercolors[6]}}"><tr><td class="main-element-td"></td></tr></table>
-			<table cellspacing="0" cellpadding="0" class="main-element" style="background-color:#{{colors[8]}};border:1px solid #{{bordercolors[8]}}"><tr><td class="main-element-td"></td></tr></table>
-			<p>4. Follow the steps and try to reach level 21.<span class="text-grey"><br>("Next step" button will appear only when you have clicked on the colors in proper order.)</span></p>
-			<hr class="line">
-			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button"><tr><td><i class="fa fa-home"></i> Back to Home</td></tr></table>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
-</div>
+	<div id="page4">
+		<table cellspacing="0" cellpadding="0" class="page-table">
+			<tr>
+				<td class="page-table-bar">Chidman</td>
+			</tr>
+			<tr>
+				<td class="page-table-body">
+					Game Over
+					<br>Step: <span class="step"></span>
+					<br>Level: <span class="level"></span>
+					<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" ng-click="backtohome()"
+						class="button">
+						<tr>
+							<td><i class="fa fa-home"></i> Back to Home</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="page-table-copy">chidman</td>
+			</tr>
+		</table>
+	</div>
 
-<div id="page6">
-	<table cellspacing="0" cellpadding="0" class="page-table">
-		<tr><td class="page-table-bar">High Score</td></tr>
-		<tr><td class="page-table-body">
-			<table cellspacing="0" cellpadding="0" class="progress_bar">
-				<tr>
-					<td class="progress_bar_left" style="width:{{high_step*189/150+1}}px"></td>
-					<td class="progress_bar_right"></td>
-				</tr>
-			</table>
-			<span>Your Level: {{level_by_step(high_step)}}/21</span><br>
-			<span>High Step: {{high_step}}</span>
-			<table cellspacing="0" cellpadding="0" ng-click="reset_high_step()" class="button-2"><tr><td><i class="fa fa-trash"></i> Reset</td></tr></table>
-			<hr class="line">
-			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button"><tr><td><i class="fa fa-home"></i> Back to Home</td></tr></table>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
-</div>
+	<div id="page5">
+		<table cellspacing="0" cellpadding="0" class="page-table">
+			<tr>
+				<td class="page-table-bar">Guide</td>
+			</tr>
+			<tr>
+				<td class="page-table-body">
+					<p>1. Click on play.</p>
+					<p>2. Memorize sequence of colors.<span class="text-grey"><br>(for example: 1.gray, 2.red,
+							3.yellow)</span></p>
+							<div id="page5-elements1"></div>
+					<p>3. Click on colors in previously shown sequence.<span class="text-grey"><br>(for example: first
+							click on gray, second on red, third on yellow)</span></p>
+							<div id="page5-elements2"></div>
+					<p>4. Follow the steps and try to reach level 21.<span class="text-grey"><br>("Next step" button
+							will appear only when you have clicked on the colors in proper order.)</span></p>
+					<hr class="line">
+					<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button">
+						<tr>
+							<td><i class="fa fa-home"></i> Back to Home</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="page-table-copy">chidman</td>
+			</tr>
+		</table>
+	</div>
 
-<div id="page7">
-	<table cellspacing="0" cellpadding="0" class="page-table">
-		<tr><td class="page-table-bar">Settings</td></tr>
-		<tr><td class="page-table-body">
-			<table cellspacing="0" cellpadding="0" class="settings-table" ng-click="change_night_mode()"><tr>
-				<td class="settings-table-lable">Night Mode</td>
-				<td><table cellspacing="0" cellpadding="0" class="select-table"><tr><td></td></tr></table></td>
-			</tr></table>
-			<hr class="line">
-			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button"><tr><td><i class="fa fa-home"></i> Back to Home</td></tr></table>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
-</div>
+	<div id="page6">
+		<table cellspacing="0" cellpadding="0" class="page-table">
+			<tr>
+				<td class="page-table-bar">High Score</td>
+			</tr>
+			<tr>
+				<td class="page-table-body">
+					<table cellspacing="0" cellpadding="0" class="progress_bar">
+						<tr>
+							<td class="progress_bar_left"></td>
+							<td class="progress_bar_right"></td>
+						</tr>
+					</table>
+					<span>Your Level: <span class="record-level"></span>/21</span><br>
+					<span>High Step: <span class="record"></span></span>
+					<table cellspacing="0" cellpadding="0" ng-click="reset_high_step()" class="button-2">
+						<tr>
+							<td><i class="fa fa-trash"></i> Reset</td>
+						</tr>
+					</table>
+					<hr class="line">
+					<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button">
+						<tr>
+							<td><i class="fa fa-home"></i> Back to Home</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="page-table-copy">chidman</td>
+			</tr>
+		</table>
+	</div>
 
-<div id="page8">
-	<table cellspacing="0" cellpadding="0" class="page-table">
-		<tr><td class="page-table-bar">Chidman</td></tr>
-		<tr><td class="page-table-body">
-			Congratulations, you whizzed it!
-			<hr class="line">
-			<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button"><tr><td><i class="fa fa-home"></i> Back to Home</td></tr></table>
-		</td></tr>
-		<tr><td class="page-table-copy">chidman</td></tr>
-	</table>
-</div>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+	<div id="page7">
+		<table cellspacing="0" cellpadding="0" class="page-table">
+			<tr>
+				<td class="page-table-bar">Settings</td>
+			</tr>
+			<tr>
+				<td class="page-table-body">
+					<table cellspacing="0" cellpadding="0" class="settings-table" ng-click="change_night_mode()">
+						<tr>
+							<td class="settings-table-lable">Night Mode</td>
+							<td>
+								<table cellspacing="0" cellpadding="0" class="select-table">
+									<tr>
+										<td></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<hr class="line">
+					<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button">
+						<tr>
+							<td><i class="fa fa-home"></i> Back to Home</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="page-table-copy">chidman</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="page8">
+		<table cellspacing="0" cellpadding="0" class="page-table">
+			<tr>
+				<td class="page-table-bar">Chidman</td>
+			</tr>
+			<tr>
+				<td class="page-table-body">
+					Congratulations, you whizzed it!
+					<hr class="line">
+					<table cellspacing="0" cellpadding="0" onclick="javascript:page(1);" class="button">
+						<tr>
+							<td><i class="fa fa-home"></i> Back to Home</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td class="page-table-copy">chidman</td>
+			</tr>
+		</table>
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
 </body>
+
 </html>

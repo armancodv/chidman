@@ -25,11 +25,11 @@ export default class Model {
         return Math.floor(this.level * 2);
     }
 
-    getTime() {
-        if (this.level % 2 === 1) {
-            return 1200 * (Math.floor(this.level / 2 + 2))
+    getTime(level = this.level) {
+        if (level % 2 === 1) {
+            return 1200 * (Math.floor(level / 2 + 2))
         } else {
-            return 1000 * (Math.floor(this.level / 2 + 2))
+            return 1000 * (Math.floor(level / 2 + 2))
         }
     }
 
@@ -53,10 +53,10 @@ export default class Model {
     }
 
 
-    updateRecord() {
-        if (localStorage.getItem('record') < this.step) {
-            localStorage.setItem('record', this.step);
-            this.record = this.step;
+    updateRecord(step = this.step) {
+        if (localStorage.getItem('record') < step) {
+            localStorage.setItem('record', step);
+            this.record = step;
         }
         if (this.step >= this.maximumStep) {
             this.changeWhiz();
@@ -81,9 +81,51 @@ export default class Model {
         this.page = page;
     }
     
-	backToHome = function() {
+	backToHome() {
 		$timeout.cancel(yourTimer);
-		$scope.set_high_step(this.step-1); // reset check
+		this.updateRecord();
+	}
+
+	getRandom(elements) {
+		return random = Math.floor((Math.random() * (elements+1)));
+	}
+    
+    nextStep() {
+		this.step++;
+    }
+    
+	createTable(elements) {
+		this.count = 0;
+		this.boxtable = [];
+		this.result = [];
+		for (let i = 1; i <= elements; i ++) {
+			do {
+				this.boxtable[i] = this.getRandom(11);
+			} while (this.boxtable.includes(i));
+		}
+		this.boxtableExam = [];
+		for (let i = 1; i <= elements; i ++) {
+			do {
+				this.boxtableExam[i] = this.getRandom(elements);
+			} while (this.boxtableExam.includes(i));
+		}
+        this.nextStep();
+        setTimeout(() => this.changePage(3), this.getTime());
+	}
+
+	select(number) {
+		if (this.result[number] === undefined) this.count++;
+		if (this.count === this.boxtableExam[number]) {
+			this.result[number] = this.count;
+			if (this.getElement() === this.count) {
+				if (this.step_number < 150) { next_step(1); }
+				else { this.updateRecord(this.step_number); this.changePage(8); }
+			}
+		} else {
+			this.updateRecord(this.step_number);
+            this.changePage(4);
+            setTimeout(() => AdMob.showInterstitial(), 500); // admob
+		}
 	}
 	
 };
